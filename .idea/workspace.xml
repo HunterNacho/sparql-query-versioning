@@ -1,0 +1,1335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="521f5655-728a-4796-a4c8-2a6305e846d5" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialQueryDiffBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2091">
+              <caret line="149" column="64" selection-start-line="149" selection-start-column="64" selection-end-line="149" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2105#2106#0" expanded="true" />
+                <element signature="e#2163#2164#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryDiffGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>base</find>
+      <find>AbsoluteVersionedQueryBuilder.FIRST_VERSION</find>
+      <find>Sequen</find>
+      <find>Path</find>
+      <find>Seq</find>
+      <find>sequence</find>
+      <find>VersionedQuery</find>
+      <find>compareTo</find>
+      <find>Sequential</find>
+      <find>this.triple =</find>
+      <find>opLabel</find>
+      <find>string</find>
+      <find>MetadataSequentialQueryDiff</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>+ this.baseVersion</replace>
+      <replace>queryBuilder.baseVersion</replace>
+      <replace>QueryDiff</replace>
+      <replace>MetadataSequential</replace>
+      <replace>MetadataSequentialVersioned</replace>
+      <replace>MetadataSequentialVersionedQuery</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/NewIntervalVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/AbsoluteVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/NewAbsoluteVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/AbstractVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/SequentialVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/NewSequentialVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/NewSequentialVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/NewIntervalVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/NewAbsoluteVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/NewBaselineVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/IVersionedDiffQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IVersionedDiffQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IVersionedQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/AbsoluteVersionedQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/TestQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/QueryDiffTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/PrevVersionedTransformBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VersionedDiffTransformBase.java" />
+        <option value="$PROJECT_DIR$/test_query2" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/DiffTransformBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralDiffVersioner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VariableCleanerTransform.java" />
+        <option value="$PROJECT_DIR$/q093.rq" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbsoluteVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/IntervalVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/BaselineVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/BaselineQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IntervalQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/QueryStripper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/node/VariableExtractionNodeTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/GroupTestingTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/expr/CoalesceDetectorTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/OperationReorderTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/AbsoluteQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/test_query" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/SequentialQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/SequentialVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/QueryFileReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VariableExtractorTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/ProjectionVariablesExtractorTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/AllVariablesExtractorTransform.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbstractVersionedQueryBuilder.java" />
+        <option value="$PROJECT_DIR$/test_output1" />
+        <option value="$PROJECT_DIR$/test_output" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryVersioner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryDiffGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialQueryDiffBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VersionedTransformBase.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$PROJECT_DIR$/../apache-maven-3.5.4" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="sparql-query-versioning" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="676" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sparqlversioning" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578184652635" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/expr" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="cl.uchile.dcc.sparqlversioning.AbstractVersionedQueryBuilder" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="cl.uchile.dcc.sparqlversioning.querybuilder" />
+    </key>
+    <key name="MoveInnerDialog.RECENTS_KEY">
+      <recent name="cl.uchile.dcc.sparqlversioning.transform.expr" />
+      <recent name="cl.uchile.dcc.sparqlversioning.transform" />
+      <recent name="cl.uchile.dcc.sparqlversioning.transform.node" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cl.uchile.dcc.sparqlversioning" />
+      <recent name="cl.uchile.dcc.sparqlversioning.transform" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ignacio\Documents\00-U\Tesis\sparql-query-versioning" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.GeneralQueryDiffGenerator">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralQueryDiffGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.sparqlversioning.GeneralQueryDiffGenerator" />
+      <module name="sparql-query-versioning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.dcc.sparqlversioning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeneralQueryVersioner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.sparqlversioning.GeneralQueryVersioner" />
+      <module name="sparql-query-versioning" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.dcc.sparqlversioning.querybuilder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.sparqlversioning.QueryFileReader" />
+      <module name="sparql-query-versioning" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\Ignacio\Documents\00-U\Tesis\sparql-query-versioning\q017.rq 0 3 meta all test_output" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.sparqlversioning.QueryFileReader" />
+      <module name="sparql-query-versioning" />
+      <option name="PROGRAM_PARAMETERS" value="C:\Users\Ignacio\Documents\00-U\Tesis\sparql-query-versioning\test_query 0 3 meta all test_output1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.Test1" />
+      <item itemvalue="Application.GeneralQueryVersioner" />
+      <item itemvalue="Application.GeneralQueryDiffGenerator" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GeneralQueryDiffGenerator" />
+        <item itemvalue="Application.GeneralQueryVersioner" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="521f5655-728a-4796-a4c8-2a6305e846d5" name="Default" comment="" />
+      <created>1536428141311</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1536428141311</updated>
+      <workItem from="1536428144004" duration="18154000" />
+      <workItem from="1536592230380" duration="21557000" />
+      <workItem from="1536706244618" duration="960000" />
+      <workItem from="1536715040201" duration="136000" />
+      <workItem from="1536757634934" duration="3724000" />
+      <workItem from="1536762295311" duration="14141000" />
+      <workItem from="1536798755631" duration="22069000" />
+      <workItem from="1536930214995" duration="8728000" />
+      <workItem from="1537017354116" duration="1191000" />
+      <workItem from="1537290443200" duration="3482000" />
+      <workItem from="1537366769158" duration="248000" />
+      <workItem from="1537374307176" duration="2334000" />
+      <workItem from="1537551491327" duration="88000" />
+      <workItem from="1537551583562" duration="428000" />
+      <workItem from="1537738547030" duration="8722000" />
+      <workItem from="1537795645823" duration="296000" />
+      <workItem from="1537976192526" duration="5543000" />
+      <workItem from="1538002334481" duration="1972000" />
+      <workItem from="1538087404725" duration="257000" />
+      <workItem from="1538090539864" duration="898000" />
+      <workItem from="1538091476652" duration="1206000" />
+      <workItem from="1538165329118" duration="1725000" />
+      <workItem from="1538242490086" duration="341000" />
+      <workItem from="1538322659041" duration="3508000" />
+      <workItem from="1538511528457" duration="143000" />
+      <workItem from="1538578600612" duration="18000" />
+      <workItem from="1539813030286" duration="816000" />
+      <workItem from="1545071685458" duration="3092000" />
+      <workItem from="1545510623126" duration="5956000" />
+      <workItem from="1545834256782" duration="1975000" />
+      <workItem from="1545842286731" duration="238000" />
+      <workItem from="1545860848051" duration="1986000" />
+      <workItem from="1545869055406" duration="14000" />
+      <workItem from="1546015039738" duration="2248000" />
+      <workItem from="1546026553048" duration="7636000" />
+      <workItem from="1551016895852" duration="952000" />
+      <workItem from="1551024454834" duration="2229000" />
+      <workItem from="1552657614161" duration="1526000" />
+      <workItem from="1552766346878" duration="1426000" />
+      <workItem from="1552916602425" duration="968000" />
+      <workItem from="1552920251358" duration="2074000" />
+      <workItem from="1552929984973" duration="2399000" />
+      <workItem from="1552933566045" duration="15828000" />
+      <workItem from="1553174589372" duration="669000" />
+      <workItem from="1553178784860" duration="10000" />
+      <workItem from="1553180592155" duration="2971000" />
+      <workItem from="1553198672565" duration="2579000" />
+      <workItem from="1553266619360" duration="8349000" />
+      <workItem from="1553370165468" duration="13016000" />
+      <workItem from="1553611477844" duration="19210000" />
+      <workItem from="1553781280546" duration="7000" />
+      <workItem from="1553785667016" duration="8379000" />
+      <workItem from="1553872897306" duration="21279000" />
+      <workItem from="1553954577001" duration="865000" />
+      <workItem from="1554127937270" duration="15902000" />
+      <workItem from="1554303213751" duration="32618000" />
+      <workItem from="1555373953162" duration="4391000" />
+      <workItem from="1555435827286" duration="1418000" />
+      <workItem from="1555619641201" duration="1045000" />
+      <workItem from="1555707920307" duration="590000" />
+      <workItem from="1555774197697" duration="12597000" />
+      <workItem from="1555863533272" duration="10030000" />
+      <workItem from="1556041423112" duration="5575000" />
+      <workItem from="1556221721887" duration="6556000" />
+      <workItem from="1556295445893" duration="3394000" />
+      <workItem from="1556323755930" duration="2154000" />
+      <workItem from="1556382834494" duration="4144000" />
+      <workItem from="1556462080036" duration="10913000" />
+      <workItem from="1556554178998" duration="80000" />
+      <workItem from="1556564587067" duration="5923000" />
+      <workItem from="1556641484589" duration="2608000" />
+      <workItem from="1556724003344" duration="1511000" />
+      <workItem from="1556809992187" duration="14218000" />
+      <workItem from="1556830829561" duration="1138000" />
+      <workItem from="1556843050193" duration="1712000" />
+      <workItem from="1556895106365" duration="8121000" />
+      <workItem from="1556986409392" duration="1310000" />
+      <workItem from="1557159996774" duration="1839000" />
+      <workItem from="1557191587191" duration="1008000" />
+      <workItem from="1557242996341" duration="1682000" />
+      <workItem from="1557328549691" duration="3201000" />
+      <workItem from="1557337221370" duration="7862000" />
+      <workItem from="1557417536361" duration="1228000" />
+      <workItem from="1557444436835" duration="629000" />
+      <workItem from="1557501523518" duration="8575000" />
+      <workItem from="1557792404002" duration="594000" />
+      <workItem from="1558192109670" duration="19170000" />
+      <workItem from="1558540963914" duration="9484000" />
+      <workItem from="1558634820854" duration="1623000" />
+      <workItem from="1558655039521" duration="3700000" />
+      <workItem from="1558714411994" duration="5102000" />
+      <workItem from="1558737356585" duration="2899000" />
+      <workItem from="1558805031497" duration="3457000" />
+      <workItem from="1559409089154" duration="695000" />
+      <workItem from="1559576750510" duration="4638000" />
+      <workItem from="1559661657014" duration="9955000" />
+      <workItem from="1559746433693" duration="11167000" />
+      <workItem from="1559784405721" duration="775000" />
+      <workItem from="1559834569327" duration="12921000" />
+      <workItem from="1559917580424" duration="8754000" />
+      <workItem from="1560116675663" duration="5492000" />
+      <workItem from="1560182514457" duration="5376000" />
+      <workItem from="1560269992761" duration="773000" />
+      <workItem from="1560275103427" duration="687000" />
+      <workItem from="1560358708394" duration="597000" />
+      <workItem from="1560365458496" duration="5809000" />
+      <workItem from="1560439650117" duration="9529000" />
+      <workItem from="1560525134483" duration="2767000" />
+      <workItem from="1560694922923" duration="9812000" />
+      <workItem from="1560791421560" duration="3667000" />
+      <workItem from="1560877403846" duration="3816000" />
+      <workItem from="1561043212210" duration="1822000" />
+      <workItem from="1561064913490" duration="1609000" />
+      <workItem from="1561137765604" duration="3022000" />
+      <workItem from="1561216738069" duration="5128000" />
+      <workItem from="1561304043782" duration="12546000" />
+      <workItem from="1561409365774" duration="7115000" />
+      <workItem from="1561484680879" duration="2101000" />
+      <workItem from="1561938693015" duration="1031000" />
+      <workItem from="1562084267476" duration="270000" />
+      <workItem from="1562262467137" duration="726000" />
+      <workItem from="1562430810094" duration="5167000" />
+      <workItem from="1563821580904" duration="5618000" />
+      <workItem from="1563856567281" duration="9000" />
+      <workItem from="1563987060040" duration="5961000" />
+      <workItem from="1564087465168" duration="2929000" />
+      <workItem from="1564188046168" duration="3587000" />
+      <workItem from="1564253097026" duration="11384000" />
+      <workItem from="1564415876232" duration="5445000" />
+      <workItem from="1564503717195" duration="767000" />
+      <workItem from="1564522752404" duration="1232000" />
+      <workItem from="1564584151392" duration="971000" />
+      <workItem from="1564684186773" duration="1106000" />
+      <workItem from="1564767122533" duration="9706000" />
+      <workItem from="1564938953862" duration="3839000" />
+      <workItem from="1565121128521" duration="4773000" />
+      <workItem from="1565216005192" duration="2916000" />
+      <workItem from="1565235247587" duration="3000" />
+      <workItem from="1565286238261" duration="1902000" />
+      <workItem from="1565301287191" duration="3968000" />
+      <workItem from="1565371398236" duration="4403000" />
+      <workItem from="1565381061898" duration="5965000" />
+      <workItem from="1565453505218" duration="9750000" />
+      <workItem from="1565626602744" duration="12171000" />
+      <workItem from="1566250054427" duration="8786000" />
+      <workItem from="1566322167751" duration="6592000" />
+      <workItem from="1566398554899" duration="14910000" />
+      <workItem from="1566492434561" duration="11130000" />
+      <workItem from="1566669748861" duration="1458000" />
+      <workItem from="1566842530230" duration="5221000" />
+      <workItem from="1567008931107" duration="6268000" />
+      <workItem from="1567023980041" duration="4754000" />
+      <workItem from="1567092729067" duration="11648000" />
+      <workItem from="1567185018422" duration="8366000" />
+      <workItem from="1567440753156" duration="17545000" />
+      <workItem from="1567532068826" duration="578000" />
+      <workItem from="1567622377153" duration="7176000" />
+      <workItem from="1567634617488" duration="867000" />
+      <workItem from="1567713876096" duration="567000" />
+      <workItem from="1567722075544" duration="2284000" />
+      <workItem from="1567787739968" duration="283000" />
+      <workItem from="1567797192544" duration="4413000" />
+      <workItem from="1567963212248" duration="22890000" />
+      <workItem from="1568036478340" duration="9698000" />
+      <workItem from="1568127905868" duration="487000" />
+      <workItem from="1568216245659" duration="412000" />
+      <workItem from="1568219025056" duration="590000" />
+      <workItem from="1568226321672" duration="1940000" />
+      <workItem from="1568651974807" duration="2084000" />
+      <workItem from="1568733597059" duration="4836000" />
+      <workItem from="1568765015356" duration="2420000" />
+      <workItem from="1568767563791" duration="223000" />
+      <workItem from="1568810886184" duration="1414000" />
+      <workItem from="1568822478440" duration="1876000" />
+      <workItem from="1568845203250" duration="3753000" />
+      <workItem from="1568985345116" duration="60000" />
+      <workItem from="1569021974555" duration="1008000" />
+      <workItem from="1569075023876" duration="2241000" />
+      <workItem from="1569104052851" duration="101000" />
+      <workItem from="1569105379597" duration="597000" />
+      <workItem from="1569175654975" duration="596000" />
+      <workItem from="1569179294594" duration="7836000" />
+      <workItem from="1569335789331" duration="2972000" />
+      <workItem from="1569344242057" duration="3054000" />
+      <workItem from="1569431981062" duration="14300000" />
+      <workItem from="1569506831179" duration="3854000" />
+      <workItem from="1569596040715" duration="1162000" />
+      <workItem from="1569630198897" duration="1225000" />
+      <workItem from="1569678709219" duration="7353000" />
+      <workItem from="1569689546686" duration="5427000" />
+      <workItem from="1569871436747" duration="8218000" />
+      <workItem from="1570032902430" duration="969000" />
+      <workItem from="1570045294334" duration="1746000" />
+      <workItem from="1570299247420" duration="523000" />
+      <workItem from="1571517535794" duration="1349000" />
+      <workItem from="1571761769133" duration="4000" />
+      <workItem from="1572018944858" duration="1101000" />
+      <workItem from="1572036167694" duration="4256000" />
+      <workItem from="1572046378887" duration="51000" />
+      <workItem from="1572294448127" duration="3591000" />
+      <workItem from="1572446203984" duration="4898000" />
+      <workItem from="1572479004464" duration="6371000" />
+      <workItem from="1572531487018" duration="2809000" />
+      <workItem from="1572635955488" duration="2956000" />
+      <workItem from="1572653026272" duration="6000" />
+      <workItem from="1572662032255" duration="43000" />
+      <workItem from="1572699881272" duration="6167000" />
+      <workItem from="1572737658741" duration="2814000" />
+      <workItem from="1572786962801" duration="9000" />
+      <workItem from="1572794329073" duration="8139000" />
+      <workItem from="1573059222023" duration="2353000" />
+      <workItem from="1573432514631" duration="2877000" />
+      <workItem from="1573567522601" duration="817000" />
+      <workItem from="1573572505411" duration="15655000" />
+      <workItem from="1573765672310" duration="8081000" />
+      <workItem from="1573830393896" duration="2138000" />
+      <workItem from="1574003145031" duration="5708000" />
+      <workItem from="1574089336163" duration="13101000" />
+      <workItem from="1574172478686" duration="596000" />
+      <workItem from="1574191186884" duration="4507000" />
+      <workItem from="1574778948889" duration="744000" />
+      <workItem from="1574865260684" duration="1311000" />
+      <workItem from="1574879506891" duration="4363000" />
+      <workItem from="1574952563688" duration="13096000" />
+      <workItem from="1575044853138" duration="13789000" />
+      <workItem from="1575296053829" duration="6890000" />
+      <workItem from="1575383604338" duration="3558000" />
+      <workItem from="1575472277710" duration="1364000" />
+      <workItem from="1577554441057" duration="576000" />
+      <workItem from="1577562680513" duration="531000" />
+      <workItem from="1578091429303" duration="1107000" />
+      <workItem from="1578154187130" duration="8105000" />
+      <workItem from="1578238041814" duration="2781000" />
+      <workItem from="1578584994096" duration="31000" />
+      <workItem from="1578768275035" duration="567000" />
+      <workItem from="1578927702055" duration="96000" />
+      <workItem from="1579572704471" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1094773000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22995462" />
+      <window_info id="Structure" order="1" weight="0.24962178" />
+      <window_info id="Nl-Palette" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Image Layers" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.39443535" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.5155483" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5015129" side_tool="true" weight="0.2667758" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32569557" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Database" order="1" weight="0.32980332" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32980332" />
+      <window_info anchor="right" id="Properties" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Maven" order="10" weight="0.32980332" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="java-exception">
+          <dependency leave-enabled="true" master-id="0" />
+          <properties>
+            <option name="NOTIFY_CAUGHT" value="false" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>expr.getFunction().getFunctionSymbol().getSymbol()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>expr.getFunction().getOpName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>xpr.getFunction().getOpName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>varExprList.getVars()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>Algebra.compile(query)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>varExprList.getExpr(variable)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>OpMinus.create(current, previous)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>opPath.getTriplePath()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbsoluteVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/BaselineVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VariableCleanerTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="155" column="36" lean-forward="true" selection-start-line="155" selection-start-column="36" selection-end-line="155" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#transform#4;class#VariableCleanerTransform#0" />
+            <element signature="method#transform#5;class#VariableCleanerTransform#0" />
+            <element signature="method#transform#6;class#VariableCleanerTransform#0" />
+            <element signature="method#transform#8;class#VariableCleanerTransform#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/GroupTestingTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/ProjectionVariablesExtractorTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-core/3.8.0/jena-core-3.8.0.jar!/org/apache/jena/graph/Node_Variable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="46" column="38" lean-forward="true" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/path/P_Path0.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding>
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/path/P_Link.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/core/TriplePath.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="30" />
+          <folding>
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1827#1828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/DiffTransformBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/core/Var.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="511" column="19" selection-start-line="511" selection-start-column="19" selection-end-line="511" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/OperationReorderTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/AllVariablesExtractorTransform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/algebra/op/OpGroup.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q001.rq" />
+    <entry file="file://$PROJECT_DIR$/q022.rq">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queries/q003.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queries/q004.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queries/q005.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queries/q010.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_query2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q000.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="460" column="19" selection-start-line="460" selection-start-column="19" selection-end-line="460" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/expr/aggregate/Aggregator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/expr/ExprAggregator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/expr/NodeValue.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="87" column="14" selection-start-line="87" selection-start-column="14" selection-end-line="87" selection-end-column="14" />
+          <folding>
+            <element signature="e#3848#3849#0" expanded="true" />
+            <element signature="e#3877#3878#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/expr/nodevalue/NodeValueDT.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="17" column="101" lean-forward="true" selection-start-line="17" selection-start-column="101" selection-end-line="17" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-core/3.8.0/jena-core-3.8.0.jar!/org/apache/jena/datatypes/xsd/XSDDatatype.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/algebra/op/OpLeftJoin.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#706#707#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/expr/E_Lang.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q088.rq">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q093.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-core/3.8.0/jena-core-3.8.0.jar!/org/apache/jena/graph/Node_URI.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+            <element signature="e#1487#1488#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q103.rq">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_output1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="21" lean-forward="true" selection-start-line="138" selection-start-column="21" selection-end-line="138" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryVersioner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/IVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbstractVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="108" column="96" lean-forward="true" selection-start-line="108" selection-start-column="96" selection-end-line="108" selection-end-column="96" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/SequentialVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="70" selection-start-line="16" selection-start-column="70" selection-end-line="16" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IntervalQueryDiffBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="60" column="18" selection-start-line="60" selection-start-column="18" selection-end-line="60" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/VersionedTransformBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="232" column="17" selection-start-line="232" selection-start-column="17" selection-end-line="232" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1712#1713#0" expanded="true" />
+            <element signature="e#1778#1779#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#2035#2036#0" expanded="true" />
+            <element signature="method#transform#19;class#VersionedTransformBase#0" />
+            <element signature="e#8536#8537#0" expanded="true" />
+            <element signature="e#8565#8566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-arq/3.8.0/jena-arq-3.8.0.jar!/org/apache/jena/sparql/algebra/op/OpTriple.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="e#684#685#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/queries/q017.rq">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_query">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/jena/jena-core/3.8.0/jena-core-3.8.0.jar!/org/apache/jena/graph/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="72" column="19" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+          <folding>
+            <element signature="e#2017#2018#0" expanded="true" />
+            <element signature="e#2045#2046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_output">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/q017.rq">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialQueryDiffBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="149" column="64" selection-start-line="149" selection-start-column="64" selection-end-line="149" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2163#2164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryDiffGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>sparql-query-versioning</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: org.apache.commons:commons-lang3:3.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

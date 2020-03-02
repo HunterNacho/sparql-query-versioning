@@ -1,0 +1,47 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Map of places mentioned in travel stories with text in French accessible online
+#added before 2016-10
+#defaultView:Map
+SELECT DISTINCT ?item ?itemLabel ?ed ?edLabel ?auteurLabel ?dateCreation ?lieuLabel ?coord ?lien
+WHERE
+{
+  ?item wdt:P136 wd:Q1164267 .
+  ?item  wdt:P31 wd:Q571 .
+  OPTIONAL{
+    ?item wdt:P50 ?auteur .
+  }
+  OPTIONAL{
+    ?item wdt:P571 ?dateCreation.
+  }
+ 
+  ?item  wdt:P840 ?lieu .
+  MINUS {?item  wdt:P840 wd:Q933}
+  ?lieu wdt:P625 ?coord .
+ 
+  {
+    ?item wdt:P953 ?lien .
+    ?item wdt:P407 wd:Q150
+  }UNION{
+    ?ed wdt:P629 ?item .
+    ?ed wdt:P953 ?lien .
+    ?ed wdt:P407 wd:Q150
+  }
+  OPTIONAL{?item rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?fr,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+  OPTIONAL{?ed rdfs:label ?efr . FILTER(LANG(?efr) = "fr")}
+	BIND(str(COALESCE(?efr,strafter(str(?ed),"http://www.wikidata.org/entity/"))) AS ?edLabel)
+  OPTIONAL{?auteur rdfs:label ?afr . FILTER(LANG(?afr) = "fr")}
+	BIND(str(COALESCE(?afr,strafter(str(?auteur),"http://www.wikidata.org/entity/"))) AS ?auteurLabel)
+  OPTIONAL{?lieu rdfs:label ?lfr . FILTER(LANG(?lfr) = "fr")}
+	BIND(str(COALESCE(?lfr,strafter(str(?lieu),"http://www.wikidata.org/entity/"))) AS ?lieuLabel)
+} ORDER BY ?dateCreation ?item ?itemLabel ?ed ?edLabel ?auteurLabel ?lieuLabel ?coord ?lien
