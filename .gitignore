@@ -1,3 +1,5 @@
 *.rq
 queries/
 test_output*
+*.class
+target/
