@@ -1,7 +1,6 @@
 package cl.uchile.dcc.sparqlversioning.querybuilder;
 
 import cl.uchile.dcc.sparqlversioning.transform.VersionedTransformBase;
-import org.apache.jena.datatypes.RDFDatatype;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
@@ -15,7 +14,6 @@ import org.apache.jena.sparql.core.Var;
 import org.apache.jena.sparql.core.VarExprList;
 import org.apache.jena.sparql.expr.*;
 import org.apache.jena.sparql.expr.aggregate.AggregatorFactory;
-import org.apache.jena.sparql.expr.nodevalue.NodeValueDT;
 import org.apache.jena.sparql.expr.nodevalue.NodeValueNode;
 import org.apache.jena.sparql.expr.nodevalue.NodeValueString;
 
@@ -116,10 +114,19 @@ public class MetadataSequentialVersionedQueryBuilder extends SequentialVersioned
             opSequence.add(new OpGraph(graphVariables.graphVar, baseOp));
             opSequence.add(new OpTriple(new Triple(graphVariables.graphVar, DIRECTION_PREDICATE, directionNode)));
             opSequence.add(new OpTriple(new Triple(graphVariables.graphVar, VERSION_PREDICATE, graphVariables.versionVar)));
-            Expr expr = new E_LessThanOrEqual(
-                    new E_Str(new ExprVar(graphVariables.versionVar)),
-                    new NodeValueString(targetVersion)
-            );
+            Expr expr;
+            if (targetIndex >= baseIndex) {
+                expr = new E_LessThanOrEqual(
+                        new E_Str(new ExprVar(graphVariables.versionVar)),
+                        new NodeValueString(targetVersion)
+                );
+            }
+            else {
+                expr = new E_GreaterThanOrEqual(
+                        new E_Str(new ExprVar(graphVariables.versionVar)),
+                        new NodeValueString(targetVersion)
+                );
+            }
 
             Op op;
             op = OpExtend.create(opSequence, graphVariables.extraVersionVar, new E_Str(new ExprVar(graphVariables.versionVar)));
@@ -159,113 +166,10 @@ public class MetadataSequentialVersionedQueryBuilder extends SequentialVersioned
             return op;
         }
 
-        /*
-        @Override
-        public Op transform(OpTriple opTriple) {
-            Triple triple = opTriple.getTriple();
-            Node subject = triple.getSubject();
-            Node predicate = triple.getPredicate();
-            Node object = triple.getObject();
-            GraphVariables variables = new GraphVariables();
-            OpSequence maxSequence = OpSequence.create();
-            maxSequence.add(new OpGraph(variables.maxGraphVar, opTriple));
-            maxSequence.add(new OpTriple(new Triple(variables.maxGraphVar, VERSION_PREDICATE, variables.versionVar)));
-            Expr expr = new E_LessThanOrEqual(
-                    new E_Str(new ExprVar(variables.versionVar)),
-                    new NodeValueString(targetVersion)
-            );
-            Op maxOp;
-            maxOp = OpExtend.create(maxSequence, variables.extraVersionVar, new E_Str(new ExprVar(variables.versionVar)));
-            maxOp = OpFilter.filter(expr, maxOp);
-            VarExprList groupVars = new VarExprList();
-            if (subject.isVariable()) {
-                groupVars.add(Var.alloc(subject));
-            }
-            if (object.isVariable()) {
-                groupVars.add(Var.alloc(object));
-            }
-            if (predicate.isVariable()) {
-                groupVars.add(Var.alloc(predicate));
-            }
-            ArrayList<Var> projectionVariables = new ArrayList<>(groupVars.getVars());
-            projectionVariables.add(variables.maxVersionVar);
-            ArrayList<ExprAggregator> exprAggregators = new ArrayList<>();
-            Var tempVar = Var.alloc(".0");
-            exprAggregators.add(
-                    new ExprAggregator(
-                            tempVar,
-                            AggregatorFactory.createMax(false, new ExprVar(variables.extraVersionVar)
-                            )));
-            maxOp = OpGroup.create(maxOp, groupVars, exprAggregators);
-            maxOp = OpExtend.create(maxOp, variables.maxVersionVar,
-                    new E_StrDatatype(
-                            new ExprVar(tempVar),
-                            new NodeValueNode(NodeFactory.createURI("http://www.w3.org/2001/XMLSchema#string"))));
-            maxOp = new OpProject(maxOp, projectionVariables);
-
-            OpSequence filterSequence = OpSequence.create();
-            filterSequence.add(new OpGraph(variables.graphVar, opTriple));
-            filterSequence.add(new OpTriple(new Triple(variables.graphVar, DIRECTION_PREDICATE, variables.directionVar)));
-            filterSequence.add(new OpTriple(new Triple(variables.graphVar, VERSION_PREDICATE, variables.maxVersionVar)));
-            Expr directionExpr = new E_Equals(
-                    new E_Str(new ExprVar(variables.directionVar)),
-                    new NodeValueString(forwards ? "forwards" : "backwards")
-            );
-            Op filterOp = OpFilter.filter(directionExpr, filterSequence);
-            //filterOp = new OpProject(filterOp, projectionVariables);
-            return OpJoin.create(maxOp, filterOp);
-        }
-        */
-
-        /*
-        @Override
-        public Op transform(OpTriple opTriple) {
-            GraphVariables addVariables = new GraphVariables();
-            Op addSequence = generateGraphFilterSequence(opTriple, addVariables, forwards);
-            Expr addExpr = new E_LessThanOrEqual(
-                    new E_Str(new ExprVar(addVariables.versionVar)),
-                    new NodeValueString(targetVersion)
-            );
-            addSequence = OpFilter.filter(addExpr, addSequence);
-
-            GraphVariables filterVariables = new GraphVariables();
-            Op filterSequence = generateGraphFilterSequence(opTriple, filterVariables, !forwards);
-            Expr filterExpr = new E_LessThanOrEqual(
-                    new E_Str(new ExprVar(filterVariables.versionVar)),
-                    new NodeValueString(targetVersion)
-            );
-            filterSequence = OpFilter.filter(filterExpr, filterSequence);
-            //return OpFilter.filter(new E_NotExists(filterSequence), addSequence);
-            Expr diffExpr = new E_GreaterThan(
-                    new E_Str(new ExprVar(filterVariables.versionVar)),
-                    new E_Str(new ExprVar(addVariables.versionVar))
-            );
-            filterSequence = OpFilter.filter(diffExpr, filterSequence);
-            //return OpFilter.filter(diffExpr, OpMinus.create(addSequence, filterSequence));
-            return OpMinus.create(addSequence, filterSequence);
-        }
-
-        private Op generateGraphFilterSequence(OpTriple opTriple, GraphVariables variables, boolean direction) {
-            OpSequence opSequence = OpSequence.create();
-            opSequence.add(new OpGraph(variables.graphVar, opTriple));
-            opSequence.add(new OpTriple(new Triple(variables.graphVar, DIRECTION_PREDICATE, variables.directionVar)));
-            opSequence.add(new OpTriple(new Triple(variables.graphVar, VERSION_PREDICATE, variables.versionVar)));
-            NodeValueString nodeValueString;
-            if (direction)
-                nodeValueString = new NodeValueString("forwards");
-            else
-                nodeValueString = new NodeValueString("backwards");
-            Expr directionFilterExpr = new E_Equals(new E_Str(new ExprVar(variables.directionVar)), nodeValueString);
-            return OpFilter.filter(directionFilterExpr, opSequence);
-        }
-        */
-
         private class GraphVariables {
-            private final Var maxGraphVar = Var.alloc("max_g" + varSuffix + graphId);
             private final Var graphVar = Var.alloc("g" + varSuffix + graphId);
             private final Var versionVar = Var.alloc("v" + varSuffix + graphId);
             private final Var extraVersionVar = Var.alloc("v" + varSuffix + graphId + "_");
-            private final Var directionVar = Var.alloc("d" + varSuffix + graphId);
             private final Var maxVersionVar = Var.alloc("max_v" + varSuffix + graphId);
 
             GraphVariables() {
