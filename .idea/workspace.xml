@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="521f5655-728a-4796-a4c8-2a6305e846d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/sparql-query-versioning.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder$MetadataSequentialTransform$GraphVariables.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder$MetadataSequentialTransform$GraphVariables.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder$MetadataSequentialTransform.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder$MetadataSequentialTransform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/sparql-query-versioning.kotlin_module" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+            <state relative-caret-position="255">
+              <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2105#2106#0" expanded="true" />
@@ -170,22 +167,38 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
               <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="queries" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="queries" type="462c0819:PsiDirectoryNode" />
+              <item name="diff" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sparql-query-versioning" type="462c0819:PsiDirectoryNode" />
+              <item name="queries" type="462c0819:PsiDirectoryNode" />
+              <item name="diff" type="462c0819:PsiDirectoryNode" />
+              <item name="sequential-n" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sparql-query-versioning" type="b2602c69:ProjectViewProjectNode" />
@@ -226,12 +239,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578184652635" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587066732814" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/transform/expr" />
@@ -274,7 +289,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GeneralQueryDiffGenerator">
+  <component name="RunManager" selected="Application.GeneralQueryVersioner">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -723,12 +738,15 @@
       <workItem from="1578768275035" duration="567000" />
       <workItem from="1578927702055" duration="96000" />
       <workItem from="1579572704471" duration="17000" />
-      <workItem from="1586978223544" duration="1830000" />
+      <workItem from="1586978223544" duration="2149000" />
+      <workItem from="1586996189842" duration="1587000" />
+      <workItem from="1587052083106" duration="2953000" />
+      <workItem from="1587139264954" duration="1912000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1096603000" />
+    <option name="totallyTimeSpent" value="1103374000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -742,7 +760,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23373677" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24508321" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -752,7 +770,7 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32569557" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" visible="true" weight="0.39443535" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49848714" weight="0.39443535" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5155483" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1106,16 +1124,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbstractVersionedQueryBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="108" column="96" lean-forward="true" selection-start-line="108" selection-start-column="96" selection-end-line="108" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/IntervalQueryDiffBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -1190,13 +1198,6 @@
         <state relative-caret-position="-9" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryDiffGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/SequentialQueryDiffBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1214,23 +1215,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialQueryDiffBuilder.java">
+    <entry file="file://$PROJECT_DIR$/queries/sequential-n/first/q000.rq">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/AbstractVersionedQueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="99" lean-forward="true" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="99" />
+        <state relative-caret-position="816">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/queries/sequential-n/first/q000.rq">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/GeneralQueryDiffGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/diff/MetadataSequentialQueryDiffBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="125" column="18" selection-start-line="125" selection-start-column="18" selection-end-line="125" selection-end-column="18" />
+        <state relative-caret-position="255">
+          <caret line="121" column="14" selection-start-line="121" selection-start-column="14" selection-end-line="121" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2105#2106#0" expanded="true" />

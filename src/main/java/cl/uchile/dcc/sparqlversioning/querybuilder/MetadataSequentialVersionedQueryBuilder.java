@@ -116,19 +116,11 @@ public class MetadataSequentialVersionedQueryBuilder extends SequentialVersioned
             opSequence.add(new OpGraph(graphVariables.graphVar, baseOp));
             opSequence.add(new OpTriple(new Triple(graphVariables.graphVar, DIRECTION_PREDICATE, directionNode)));
             opSequence.add(new OpTriple(new Triple(graphVariables.graphVar, VERSION_PREDICATE, graphVariables.versionVar)));
-            Expr expr;
-            if (targetIndex >= baseIndex) {
-                expr = new E_LessThanOrEqual(
-                        new E_Str(new ExprVar(graphVariables.versionVar)),
-                        new NodeValueString(targetVersion)
-                );
-            }
-            else {
-                expr = new E_GreaterThanOrEqual(
-                        new E_Str(new ExprVar(graphVariables.versionVar)),
-                        new NodeValueString(targetVersion)
-                );
-            }
+            Expr expr = new E_LessThanOrEqual(
+                    new E_Str(new ExprVar(graphVariables.versionVar)),
+                    new NodeValueString(targetVersion)
+            );
+
             Op op;
             op = OpExtend.create(opSequence, graphVariables.extraVersionVar, new E_Str(new ExprVar(graphVariables.versionVar)));
             op = OpFilter.filter(expr, op);

@@ -3,3 +3,4 @@ queries/
 test_output*
 *.class
 target/
+pom.xml
