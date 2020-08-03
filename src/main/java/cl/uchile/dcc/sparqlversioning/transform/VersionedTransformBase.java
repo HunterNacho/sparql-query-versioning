@@ -12,7 +12,6 @@ import org.apache.jena.sparql.core.TriplePath;
 import org.apache.jena.sparql.path.*;
 import org.apache.jena.sparql.util.NodeIsomorphismMap;
 
-import javax.management.Query;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,7 +101,7 @@ public abstract class VersionedTransformBase implements Transform {
 
     public Op transform(OpSequence opSequence, List<Op> subOps) {
         BasicPattern triples = new BasicPattern();
-        ArrayList<Op> rest =  new ArrayList<Op>();
+        ArrayList<Op> rest =  new ArrayList<>();
         for (Op op : subOps) {
             if (op instanceof OpTriple)
                 triples.add(((OpTriple) op).getTriple());
@@ -124,7 +123,7 @@ public abstract class VersionedTransformBase implements Transform {
     }
 
     public Op transform(OpDisjunction opDisjunction, List<Op> list) {
-        ArrayList<Op> newList = new ArrayList<Op>();
+        ArrayList<Op> newList = new ArrayList<>();
         for (Op op : list) {
             newList.add(Transformer.transform(this, op));
         }
@@ -166,7 +165,7 @@ public abstract class VersionedTransformBase implements Transform {
                 return new OpPath(new TriplePath(subject, subPath, object));
             Node current;
             Node previous = subject;
-            ArrayList<Op> ops = new ArrayList<Op>();
+            ArrayList<Op> ops = new ArrayList<>();
             for (int i = 0; i < count - 1; i++) {
                 current = NodeFactory.createVariable("var" + varNumber++);
                 ops.add(new OpPath(new TriplePath(previous, subPath, current)));
@@ -185,7 +184,7 @@ public abstract class VersionedTransformBase implements Transform {
             Node variable =  NodeFactory.createVariable("var" + varNumber++);
             Path leftPath = ((P_Seq) path).getLeft();
             Path rightPath = ((P_Seq) path).getRight();
-            ArrayList<Op> triples = null;
+            ArrayList<Op> triples;
             triples = extractTriples(subject, (P_Seq) path, object);
             if (triples != null && !triples.isEmpty()) {
                 return OpSequence.create().apply(this, triples);
@@ -202,7 +201,7 @@ public abstract class VersionedTransformBase implements Transform {
         return opPath;
     }
 
-    private ArrayList<Op> extractTriples(Node subject, P_Seq seq, Node object){
+    private ArrayList<Op> extractTriples(Node subject, P_Seq seq, Node object) {
         ArrayList<Op> ops = new ArrayList<>();
         Node variable = NodeFactory.createVariable("var" + varNumber++);
         Node left = subject;
@@ -289,8 +288,4 @@ public abstract class VersionedTransformBase implements Transform {
         return opAssign.copy(op);
     }
 
-
-    protected class QueryNotSupportedException extends Exception {
-
-    }
 }
