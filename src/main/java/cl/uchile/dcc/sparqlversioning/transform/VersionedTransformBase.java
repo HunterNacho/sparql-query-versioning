@@ -2,6 +2,7 @@ package cl.uchile.dcc.sparqlversioning.transform;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
+import org.apache.jena.graph.Node_Literal;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.sparql.algebra.Op;
 import org.apache.jena.sparql.algebra.Transform;
@@ -9,6 +10,12 @@ import org.apache.jena.sparql.algebra.Transformer;
 import org.apache.jena.sparql.algebra.op.*;
 import org.apache.jena.sparql.core.BasicPattern;
 import org.apache.jena.sparql.core.TriplePath;
+import org.apache.jena.sparql.core.Var;
+import org.apache.jena.sparql.core.VarExprList;
+import org.apache.jena.sparql.expr.E_StrConcat;
+import org.apache.jena.sparql.expr.Expr;
+import org.apache.jena.sparql.expr.ExprVar;
+import org.apache.jena.sparql.expr.nodevalue.NodeValueNode;
 import org.apache.jena.sparql.path.*;
 import org.apache.jena.sparql.util.NodeIsomorphismMap;
 
@@ -194,6 +201,32 @@ public abstract class VersionedTransformBase implements Transform {
                     new OpPath(new TriplePath(variable, rightPath, object))
             );
         }
+        else if (path instanceof P_ZeroOrOne) {
+            if (!subject.isVariable() && !object.isVariable())
+                return new OpPath(new TriplePath(subject, ((P_ZeroOrOne) path).getSubPath(), object)).apply(this);
+            VarExprList list = new VarExprList();
+            if (subject.isVariable() && object.isVariable()) {
+                list.add(Var.alloc(object), new ExprVar(subject));
+                Node var1 = NodeFactory.createVariable("var" + varNumber++);
+                Node var2 = NodeFactory.createVariable("var" + varNumber++);
+                Op opUnion = OpUnion.create(
+                        new OpTriple(new Triple(subject, var1, var2)),
+                        new OpTriple(new Triple(var2, var1, subject))
+                );
+                return OpUnion.create(
+                        transform(new OpPath(new TriplePath(subject, ((P_ZeroOrOne) path).getSubPath(), object))),
+                        OpExtend.extend(opUnion, list)
+                );
+            }
+            if (subject.isVariable())
+                list.add(Var.alloc(subject), new NodeValueNode(object));
+            else
+                list.add(Var.alloc(object), new NodeValueNode(subject));
+            return OpUnion.create(
+                    transform(new OpPath(new TriplePath(subject, ((P_ZeroOrOne) path).getSubPath(), object))),
+                    OpExtend.extend(new OpBGP(), list)
+            );
+        }
         else if (isComplex(path)) {
             return handleComplexPath(opPath);
         }
@@ -216,6 +249,8 @@ public abstract class VersionedTransformBase implements Transform {
                 ops.addAll(extractTriples(left, (P_Seq) path, right));
             } else if (path instanceof P_Alt) {
                 ops.add(transform(new OpPath(new TriplePath(left, path, right))));
+            } else if (path instanceof P_ZeroOrOne) {
+                ops.add(transform(new OpPath(new TriplePath(left, path, right))));
             } else if (isComplex(path)) {
                 ops.add(handleComplexPath(new OpPath(new TriplePath(left, path, right))));
             } else {
@@ -229,7 +264,7 @@ public abstract class VersionedTransformBase implements Transform {
     }
 
     // To be implemented
-    protected Op handleComplexPath(OpPath opPath){
+    protected Op handleComplexPath(OpPath opPath) {
         return opPath;
     }
 

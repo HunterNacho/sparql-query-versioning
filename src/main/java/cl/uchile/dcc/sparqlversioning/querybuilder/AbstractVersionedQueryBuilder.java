@@ -1,13 +1,11 @@
 package cl.uchile.dcc.sparqlversioning.querybuilder;
 
 import cl.uchile.dcc.sparqlversioning.querybuilder.diff.IQueryDiffBuilder;
-import cl.uchile.dcc.sparqlversioning.transform.AllVariablesExtractorTransform;
 import cl.uchile.dcc.sparqlversioning.transform.OperationReorderTransform;
 import cl.uchile.dcc.sparqlversioning.transform.ProjectionVariablesExtractorTransform;
 import org.apache.jena.query.Query;
 import org.apache.jena.sparql.algebra.*;
 import org.apache.jena.sparql.algebra.op.*;
-import org.apache.jena.sparql.core.Var;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -35,7 +33,7 @@ public abstract class AbstractVersionedQueryBuilder implements IVersionedQueryBu
     private Op processedQuery;
     protected final String targetVersion;
     protected final String baseVersion;
-    protected final boolean targetEqualsBase;
+    final boolean targetEqualsBase;
     protected final int targetIndex;
     final int baseIndex;
     protected boolean forwards;
@@ -64,6 +62,8 @@ public abstract class AbstractVersionedQueryBuilder implements IVersionedQueryBu
         ArrayList<String> queryLines = this.getQueryLines();
         BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
         for (String line : queryLines) {
+            if (line.contains("# Empty BGP"))
+                line = line.replace("# Empty BGP", "");
             writer.write(line);
             writer.newLine();
         }
