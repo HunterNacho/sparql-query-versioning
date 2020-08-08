@@ -2,7 +2,6 @@ package cl.uchile.dcc.sparqlversioning.transform;
 
 import org.apache.jena.graph.Node;
 import org.apache.jena.graph.NodeFactory;
-import org.apache.jena.graph.Node_Literal;
 import org.apache.jena.graph.Triple;
 import org.apache.jena.sparql.algebra.Op;
 import org.apache.jena.sparql.algebra.Transform;
@@ -12,8 +11,6 @@ import org.apache.jena.sparql.core.BasicPattern;
 import org.apache.jena.sparql.core.TriplePath;
 import org.apache.jena.sparql.core.Var;
 import org.apache.jena.sparql.core.VarExprList;
-import org.apache.jena.sparql.expr.E_StrConcat;
-import org.apache.jena.sparql.expr.Expr;
 import org.apache.jena.sparql.expr.ExprVar;
 import org.apache.jena.sparql.expr.nodevalue.NodeValueNode;
 import org.apache.jena.sparql.path.*;
@@ -269,7 +266,7 @@ public abstract class VersionedTransformBase implements Transform {
     }
 
     private boolean isComplex(Path path) {
-        return path instanceof P_ZeroOrOne ||
+        return  // path instanceof P_ZeroOrOne || // Added support
                 // path instanceof P_Mod || // Unsupported
                 path instanceof P_ZeroOrMoreN ||
                 path instanceof P_ZeroOrMore1 ||
