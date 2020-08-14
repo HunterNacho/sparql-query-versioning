@@ -2,3 +2,4 @@
 queries/
 test_output*
 *.class
+.idea/
