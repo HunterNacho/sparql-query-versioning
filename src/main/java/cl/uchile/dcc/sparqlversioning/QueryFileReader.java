@@ -21,13 +21,14 @@ public class QueryFileReader {
         int target = Integer.parseInt(args[2]);
         boolean baseOnLast = args[1].startsWith("n");
         boolean onlyNew = args[4].startsWith("n");
-        if (args[3].startsWith("s")) {
+        /*if (args[3].startsWith("s")) { // Deprecated
             if (onlyNew)
                 versionedQueryBuilder = new SequentialQueryDiffBuilder(query, target, baseOnLast);
             else
                 versionedQueryBuilder = new SequentialVersionedQueryBuilder(query, target, baseOnLast);
         }
-        else if (args[3].startsWith("m")) {
+        else */
+        if (args[3].startsWith("s")) {
             if (onlyNew)
                 versionedQueryBuilder = new MetadataSequentialQueryDiffBuilder(query, target, baseOnLast);
             else
