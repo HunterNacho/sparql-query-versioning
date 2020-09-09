@@ -73,12 +73,23 @@ public class MetadataSequentialVersionedQueryBuilder extends SequentialVersioned
             GraphVariables rightVariables = new GraphVariables();
             Op left = getSubQuery(op, leftVariables, forwards);
             Op right = getSubQuery(op, rightVariables, !forwards);
-            Expr expr = new E_LogicalOr(
-                    new E_LogicalNot(new E_Bound(new ExprVar(rightVariables.maxVersionVar))),
-                    new E_GreaterThan(
-                            new E_Str(new ExprVar(leftVariables.maxVersionVar)),
-                            new E_Str(new ExprVar(rightVariables.maxVersionVar))
-                    ));
+            Expr expr;
+            if (targetIndex >= baseIndex) {
+                expr = new E_LogicalOr(
+                        new E_LogicalNot(new E_Bound(new ExprVar(rightVariables.maxVersionVar))),
+                        new E_GreaterThan(
+                                new E_Str(new ExprVar(leftVariables.maxVersionVar)),
+                                new E_Str(new ExprVar(rightVariables.maxVersionVar))
+                        ));
+            }
+            else {
+                expr = new E_LogicalOr(
+                        new E_LogicalNot(new E_Bound(new ExprVar(rightVariables.maxVersionVar))),
+                        new E_LessThan(
+                                new E_Str(new ExprVar(leftVariables.maxVersionVar)),
+                                new E_Str(new ExprVar(rightVariables.maxVersionVar))
+                        ));
+            }
             return OpLeftJoin.create(left, right, expr);
         }
 
@@ -145,11 +156,20 @@ public class MetadataSequentialVersionedQueryBuilder extends SequentialVersioned
             projectionVariables.add(graphVariables.maxVersionVar);
             ArrayList<ExprAggregator> exprAggregators = new ArrayList<>();
             Var tempVar = Var.alloc(".0");
-            exprAggregators.add(
-                    new ExprAggregator(
-                            tempVar,
-                            AggregatorFactory.createMax(false, new ExprVar(graphVariables.extraVersionVar)
-                            )));
+            if (targetIndex >= baseIndex) {
+                exprAggregators.add(
+                        new ExprAggregator(
+                                tempVar,
+                                AggregatorFactory.createMax(false, new ExprVar(graphVariables.extraVersionVar)
+                                )));
+            }
+            else {
+                exprAggregators.add(
+                        new ExprAggregator(
+                                tempVar,
+                                AggregatorFactory.createMin(false, new ExprVar(graphVariables.extraVersionVar)
+                                )));
+            }
             op = OpGroup.create(op, groupVars, exprAggregators);
             op = OpExtend.create(op, graphVariables.maxVersionVar,
                     new E_StrDatatype(
