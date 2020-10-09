@@ -1,0 +1,22 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+
+SELECT ?entity ?entityLabel ?authorLabel WHERE {
+  VALUES ?author {wd:Q18016466}
+  ?entity wdt:P31 wd:Q13442814.
+  ?entity wdt:P50 ?author.
+  OPTIONAL{?entity rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?entity),"http://www.wikidata.org/entity/"))) AS ?entityLabel)
+  OPTIONAL{?author rdfs:label ?aen . FILTER(LANG(?aen) = "en")}
+	BIND(str(COALESCE(?aen,strafter(str(?author),"http://www.wikidata.org/entity/"))) AS ?authorLabel) 
+}
+ORDER BY ?entity ?entityLabel ?authorLabel

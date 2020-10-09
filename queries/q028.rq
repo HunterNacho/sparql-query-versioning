@@ -1,0 +1,25 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Dimensions of elements
+#defaultView:Dimensions
+SELECT ?elementLabel ?boiling_point ?melting_point ?electronegativity ?density ?mass WHERE {
+?element wdt:P31 wd:Q11344;
+   wdt:P2102 ?boiling_point;
+   wdt:P2101 ?melting_point;
+   wdt:P1108 ?electronegativity;
+   wdt:P2054 ?density;
+   wdt:P2067 ?mass.
+  OPTIONAL{?element rdfs:label ?en . FILTER(LANG(?en) = "en")}
+  BIND(str(COALESCE(?en,strafter(str(?element),"http://www.wikidata.org/entity/"))) AS ?elementLabel)
+}
+ORDER BY ?elementLabel ?boiling_point ?melting_point ?electronegativity ?density ?mass
+LIMIT 100

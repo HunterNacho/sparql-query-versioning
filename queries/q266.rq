@@ -1,0 +1,37 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Louvre artworks in display cases
+#defaultView:ImageGrid
+SELECT ?item ?itemLabel ?itemDescription ?image WHERE {
+  #part1: objects in cases
+  {
+  ?item wdt:P276             ?case     .
+  ?case wdt:P31            wd:Q3561331 .
+  
+  ?case wdt:P276             ?room     .
+  ?room wdt:P31/wdt:P279*  wd:Q180516  . # wd:Q15206795
+  
+  ?room wdt:P466             ?dep      .
+  ?dep  wdt:P361+          wd:Q19675
+  }       
+  
+  OPTIONAL { ?item wdt:P18 ?image } # Optionally with an image
+  OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+  OPTIONAL{?item rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?en,?fr,strafter(str(?play),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+  
+  OPTIONAL{?item schema:description ?den . FILTER(LANG(?den) = "en")}
+  OPTIONAL{?item schema:description ?dfr . FILTER(LANG(?dfr) = "fr")}
+	BIND(str(COALESCE(?den,?dfr,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemDescription)
+
+}
+ORDER BY ?item ?itemLabel ?itemDescription ?image

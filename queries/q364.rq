@@ -1,0 +1,25 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Language statements that point to a country
+#These language statements point to a country instead of a language, which is almost certainly a mistake. In certain languages, a country and its language may have the same label.
+#added before 2016-10
+SELECT DISTINCT ?work ?workLabel ?languageLabel
+WHERE
+{
+  ?work wdt:P37|wdt:P103|wdt:P364|wdt:P407|wdt:P1412|wdt:P2439 ?language.
+  ?language wdt:P31/wdt:P279* wd:Q7275.
+  OPTIONAL{?work rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?work),"http://www.wikidata.org/entity/"))) AS ?workLabel)
+  OPTIONAL{?language rdfs:label ?len . FILTER(LANG(?len) = "en")}
+	BIND(str(COALESCE(?len,strafter(str(?language),"http://www.wikidata.org/entity/"))) AS ?languageLabel)
+}
+ORDER BY ?languageLabel ?work ?workLabel

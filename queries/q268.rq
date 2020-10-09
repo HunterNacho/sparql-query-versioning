@@ -1,0 +1,28 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#List of theatre plays
+#added before 2016-10
+SELECT ?play ?playLabel
+WHERE
+{
+	?play wdt:P31 wd:Q25379 .
+	OPTIONAL{?play rdfs:label ?en . FILTER(LANG(?en) = "en")}
+        OPTIONAL{?play rdfs:label ?es . FILTER(LANG(?es) = "es")}
+	OPTIONAL{?play rdfs:label ?pt . FILTER(LANG(?pt) = "pt")}
+        OPTIONAL{?play rdfs:label ?de . FILTER(LANG(?de) = "de")}
+        OPTIONAL{?play rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	OPTIONAL{?play rdfs:label ?ja . FILTER(LANG(?ja) = "ja")}
+	OPTIONAL{?play rdfs:label ?zh . FILTER(LANG(?zh) = "zh")}
+	BIND(str(COALESCE(?en,?es,?pt,?de,?fr,?ja,?zh,strafter(str(?play),"http://www.wikidata.org/entity/"))) AS ?playLabel)
+}
+ORDER BY ?play ?playLabel
+LIMIT 1000

@@ -1,0 +1,29 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Eiffel Tower in art
+#added before 2016-10
+SELECT DISTINCT ?item ?itemLabel ?instanceLabel ?creatorLabel ?date ?image
+WHERE
+{
+  ?item wdt:P180 wd:Q243 .
+  ?item wdt:P31 ?instance .
+  OPTIONAL { ?item wdt:P170 ?creator }
+  OPTIONAL { ?item wdt:P571 ?date }
+  OPTIONAL { ?item wdt:P18 ?image }
+  OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+  OPTIONAL{?instance rdfs:label ?ien . FILTER(LANG(?ien) = "en")}
+	BIND(str(COALESCE(?ien,strafter(str(?instance),"http://www.wikidata.org/entity/"))) AS ?instanceLabel)
+  OPTIONAL{?creator rdfs:label ?cen . FILTER(LANG(?cen) = "en")}
+	BIND(str(COALESCE(?cen,strafter(str(?creator),"http://www.wikidata.org/entity/"))) AS ?creatorLabel)
+}
+ORDER BY ?itemLabel ?item ?instanceLabel ?creatorLabel ?date ?image

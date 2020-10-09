@@ -1,0 +1,33 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Names of 100 cities with a population larger than 1000000 in the native languages of their countries
+#added before 2016-10
+# Show the names of 100 cities with a population larger than 1000000 in the native languages of their countries
+SELECT ?city ?cityLabel ?country ?countryLabel ?lang ?langLabel ?langCode ?population
+WHERE
+{
+  ?city wdt:P1082 ?population .
+ 
+  FILTER(?population>1000000)
+ 
+  ?city wdt:P31 wd:Q515;
+        wdt:P17 ?country;
+        rdfs:label ?cityLabel .
+  ?country wdt:P37 ?lang;
+           rdfs:label ?countryLabel .
+  ?lang wdt:P424 ?langCode;
+        rdfs:label ?langLabel .
+ 
+  FILTER(lang(?cityLabel)=?langCode)
+  FILTER(lang(?countryLabel)=?langCode)
+  FILTER(lang(?langLabel)=?langCode)
+    } 
+	ORDER BY ?city ?cityLabel ?country ?countryLabel ?lang ?langLabel ?langCode ?population
+	LIMIT 100

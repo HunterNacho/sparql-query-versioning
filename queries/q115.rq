@@ -1,0 +1,29 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Destinations from Antwerp International airport
+#added before 2016-10
+#defaultView:Map
+SELECT ?connectsairport ?connectsairportLabel ?place_served ?place_servedLabel ?coor
+WHERE
+{
+  VALUES ?airport { wd:Q17480 } # Antwerp international airport  wd:Q17480
+  ?airport wdt:P81 ?connectsairport ;
+           wdt:P625 ?base_airport_coor .
+  ?connectsairport wdt:P931 ?place_served ;
+                   wdt:P625 ?coor .
+ 
+  OPTIONAL{?connectsairport rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?connectsairport),"http://www.wikidata.org/entity/"))) AS ?connectsairportLabel)
+  OPTIONAL{?place_served rdfs:label ?pen . FILTER(LANG(?pen) = "en")}
+	BIND(str(COALESCE(?pen,strafter(str(?place_served),"http://www.wikidata.org/entity/"))) AS ?place_servedLabel)
+}
+ORDER BY ?connectsairport ?connectsairportLabel ?place_served ?place_servedLabel ?coor

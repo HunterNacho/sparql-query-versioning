@@ -1,0 +1,23 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Politicians who died of cancer (of any type)
+#added before 2016-10
+SELECT ?politician ?cause ?politician_label ?cause_of_death_label
+WHERE
+{
+	?politician wdt:P106 wd:Q82955 .    # find items that have "occupation (P106): politician (Q82955)"
+	?politician wdt:P509 ?cause .       # with a P509 (cause of death) claim
+	?cause wdt:P279* wd:Q12078 .        # ... where the cause is a subclass of (P279*) cancer (Q12078)
+	# ?politician wdt:P39 wd:Q11696 .   # Uncomment this line to include only U.S. Presidents
+	 
+	OPTIONAL {?politician rdfs:label ?politician_label filter (lang(?politician_label) = "en") .}
+	OPTIONAL {?cause rdfs:label ?cause_of_death_label filter (lang(?cause_of_death_label) = "en").}
+}
+ORDER BY ASC (?politician) ?cause ?politician_label ?cause_of_death_label

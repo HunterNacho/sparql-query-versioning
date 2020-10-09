@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="521f5655-728a-4796-a4c8-2a6305e846d5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_query" beforeDir="false" afterPath="$PROJECT_DIR$/test_query" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+            <state relative-caret-position="17">
+              <caret line="171" column="13" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,6 +195,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,7 +261,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -742,12 +740,13 @@
       <workItem from="1597792820214" duration="420000" />
       <workItem from="1599328847798" duration="1353000" />
       <workItem from="1599612883656" duration="2871000" />
-      <workItem from="1599616519620" duration="1063000" />
+      <workItem from="1599616519620" duration="1168000" />
+      <workItem from="1599617925132" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1184565000" />
+    <option name="totallyTimeSpent" value="1184688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,9 +759,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642964" />
       <window_info id="Structure" order="1" weight="0.24962178" />
       <window_info id="Nl-Palette" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1178,13 +1176,6 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/QueryFileReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_output">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1202,6 +1193,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/QueryFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test_query">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1211,8 +1209,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cl/uchile/dcc/sparqlversioning/querybuilder/MetadataSequentialVersionedQueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="171" column="13" lean-forward="true" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="171" column="13" selection-start-line="171" selection-start-column="13" selection-end-line="171" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

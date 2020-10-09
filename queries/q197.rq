@@ -1,0 +1,24 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#List of pharmaceutical drugs with picture
+#added before 2016-10
+SELECT ?moleculeLabel ?formule ?picture ?molecule
+WHERE
+{
+	?molecule  wdt:P31 wd:Q12140
+	; wdt:P274 ?formule
+	; wdt:P117 ?picture 
+	OPTIONAL{?molecule rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	OPTIONAL{?molecule rdfs:label ?de . FILTER(LANG(?de) = "de")}
+	BIND(str(COALESCE(?en,?de,strafter(str(?molecule),"http://www.wikidata.org/entity/"))) AS ?moleculeLabel)
+}
+ORDER BY ?moleculeLabel ?formule ?picture ?molecule

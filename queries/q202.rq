@@ -1,0 +1,31 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Universities of main programming language authors
+SELECT ?lang ?langLabel ?human ?humanLabel ?educatedat ?educatedatLabel ?coords
+{
+  ?lang wdt:P31/wdt:P279* wd:Q9143 .
+  ?human wdt:P31 wd:Q5 .
+  { ?lang wdt:P287 ?human } UNION { ?lang wdt:P170 ?human } UNION { ?lang wdt:P943 ?human } UNION { ?lang wdt:P178 ?human } .
+  ?human wdt:P69 ?educatedat .
+  ?educatedat wdt:P625 ?coords .
+  OPTIONAL{?lang rdfs:label ?en . FILTER(LANG(?en) = "en")}
+  OPTIONAL{?lang rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?en,?fr,strafter(str(?lang),"http://www.wikidata.org/entity/"))) AS ?langLabel)
+  OPTIONAL{?human rdfs:label ?hen . FILTER(LANG(?hen) = "en")}
+  OPTIONAL{?human rdfs:label ?hfr . FILTER(LANG(?hfr) = "fr")}
+	BIND(str(COALESCE(?hen,?hfr,strafter(str(?human),"http://www.wikidata.org/entity/"))) AS ?humanLabel)
+  OPTIONAL{?educatedat rdfs:label ?een . FILTER(LANG(?een) = "en")}
+  OPTIONAL{?educatedat rdfs:label ?efr . FILTER(LANG(?efr) = "fr")}
+	BIND(str(COALESCE(?een,?efr,strafter(str(?educatedat),"http://www.wikidata.org/entity/"))) AS ?educatedatLabel)
+}
+ORDER BY ?lang ?langLabel ?human ?humanLabel ?educatedat ?educatedatLabel ?coords
+LIMIT 100

@@ -1,0 +1,30 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Locations of universities in Cameroon
+#added before 2016-10
+#defaultView:Map
+SELECT ?universityLabel ?universityDescription ?website ?coord
+WHERE {
+	?university wdt:P31/wdt:P279* wd:Q3918 ;
+		wdt:P17 wd:Q1009 ;
+		wdt:P625 ?coord .
+	OPTIONAL {
+		?university wdt:P856 ?website
+	}
+OPTIONAL{?university rdfs:label ?universityen . FILTER(LANG(?universityen) = "en")}
+OPTIONAL{?university rdfs:label ?universityde . FILTER(LANG(?universityde) = "de")}
+BIND(str(COALESCE(?universityen,?universityde,strafter(str(?university),"http://www.wikidata.org/entity/"))) AS ?universityLabel)
+OPTIONAL{?university schema:description ?universityden . FILTER(LANG(?universityden) = "en")}
+OPTIONAL{?university schema:description ?universitydde . FILTER(LANG(?universitydde) = "de")}
+BIND(str(COALESCE(?universityden,?universitydde,strafter(str(?university),"http://www.wikidata.org/entity/"))) AS ?universityDescription)
+}
+ORDER BY ?universityLabel ?universityDescription ?website ?coord

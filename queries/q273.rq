@@ -1,0 +1,21 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Books or literary works published before 1830 with place of publication or narrative location coordinates
+#added before 2016-10
+SELECT ?subj ?label ?coord ?place
+WHERE
+{
+  {?subj wdt:P31 wd:Q571 } UNION {?subj wdt:P31 wd:Q7725634}.
+   ?subj wdt:P577 ?date FILTER (?date < "1830-01-01T00:00:00Z"^^xsd:dateTime) .
+  OPTIONAL { {?subj wdt:P291 ?place} UNION {?subj wdt:P840 ?place }.
+    ?place wdt:P625 ?coord }.
+   ?subj rdfs:label ?label filter (lang(?label) = "en")
+}
+ORDER BY ?subj ?label ?coord ?place

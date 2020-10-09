@@ -1,0 +1,26 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Groups of characters in the Marvel universe
+#defaultView:Graph
+SELECT ?char ?charLabel ?group ?groupLabel ("7FFF00" as ?rgb)
+WHERE {
+	?group wdt:P31 wd:Q14514600 ;  # group of fictional characters
+          wdt:P1080 wd:Q931597.  # from Marvel universe
+ ?char wdt:P463 ?group # member of group
+
+OPTIONAL{?char rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?char),"http://www.wikidata.org/entity/"))) AS ?charLabel)
+
+OPTIONAL{?group rdfs:label ?gen . FILTER(LANG(?gen) = "en")}
+	BIND(str(COALESCE(?gen,strafter(str(?group),"http://www.wikidata.org/entity/"))) AS ?groupLabel)
+}
+ORDER BY ?char ?charLabel ?group ?groupLabel ?rgb

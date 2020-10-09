@@ -1,0 +1,26 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Ten random painting images
+# This returns 10 random painting images
+# RAND() returns one random number (cached like every query).
+# The string representation of the item and the random number are hashed.
+# This will give a complete different ordering every time you have a different random number.
+# You can change the LIMIT if you want to trigger a new random number
+#defaultView:ImageGrid
+SELECT ?item ?itemLabel ?image (MD5(CONCAT(str(?item),str(RAND()))) as ?random)  WHERE {
+  ?item wdt:P31 wd:Q3305213.
+  ?item wdt:P18 ?image.
+  OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+} 
+ORDER BY ?random ?item ?itemLabel ?image
+LIMIT 10

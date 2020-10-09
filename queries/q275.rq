@@ -1,0 +1,24 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Text by author containing case-insensitive title with optional cover image
+select distinct ?item ?authorLabel ?itemLabel ?image where {
+  ?item wdt:P31/wdt:P279* wd:Q234460.
+  ?author ?label 'Bram Stoker'.
+  ?item wdt:P50 ?author.
+  ?item rdfs:label ?itemLabel.
+  filter contains(lcase(?itemLabel), 'dracula').
+  optional {?item wdt:P18 ?image.}
+  OPTIONAL{?author rdfs:label ?aen . FILTER(LANG(?aen) = "en")}
+	BIND(str(COALESCE(?aen,strafter(str(?author),"http://www.wikidata.org/entity/"))) AS ?authorLabel)
+} 
+ORDER BY ?item ?authorLabel ?itemLabel ?image 
+limit 50

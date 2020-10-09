@@ -1,0 +1,44 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Translation of labels and descriptions
+#Missing labels for a target language
+#Search for labels in other languages that do not exist in a target language
+#Can be input for Q29032512
+SELECT ?item ?itemLabel ?itemDescription WHERE {
+ ?item wdt:P31 wd:Q5.  #instance of human
+ ?item wdt:P27 wd:Q31. #country of citizenship Belgium
+ OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+        OPTIONAL{?item rdfs:label ?es . FILTER(LANG(?es) = "es")}
+	OPTIONAL{?item rdfs:label ?pt . FILTER(LANG(?pt) = "pt")}
+        OPTIONAL{?item rdfs:label ?de . FILTER(LANG(?de) = "de")}
+        OPTIONAL{?item rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	OPTIONAL{?item rdfs:label ?nl . FILTER(LANG(?nl) = "nl")}
+	OPTIONAL{?item rdfs:label ?no . FILTER(LANG(?no) = "no")}
+	OPTIONAL{?item rdfs:label ?it . FILTER(LANG(?it) = "it")}
+	BIND(str(COALESCE(?nl,?fr,?en,?de,?it,?es,?no,?pt,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+	
+  OPTIONAL{?item schema:description ?den . FILTER(LANG(?den) = "en")}
+        OPTIONAL{?item schema:description ?des . FILTER(LANG(?des) = "es")}
+	OPTIONAL{?item schema:description ?dpt . FILTER(LANG(?dpt) = "pt")}
+        OPTIONAL{?item schema:description ?dde . FILTER(LANG(?dde) = "de")}
+        OPTIONAL{?item schema:description ?dfr . FILTER(LANG(?dfr) = "fr")}
+	OPTIONAL{?item schema:description ?dnl . FILTER(LANG(?dnl) = "nl")}
+	OPTIONAL{?item schema:description ?dno . FILTER(LANG(?dno) = "no")}
+	OPTIONAL{?item schema:description ?dit . FILTER(LANG(?dit) = "it")}
+	BIND(str(COALESCE(?dnl,?dfr,?den,?dde,?dit,?des,?dno,?dpt,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemDescription)
+	
+ FILTER(NOT EXISTS {
+   ?item rdfs:label ?lang_label.
+   FILTER(LANG(?lang_label) = "it") #with missing Italian label
+ })
+}
+ORDER BY ?itemLabel ?item ?itemDescription

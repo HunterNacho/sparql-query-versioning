@@ -1,0 +1,30 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Firearms cartridges and which they are based on
+#defaultView:Graph
+SELECT
+?item ?itemLabel ?image 
+?other ?otherLabel ?image2
+WHERE
+{
+    ?item  wdt:P279+ wd:Q37144 .   # cartridges
+    ?item  wdt:P144    ?other  .   # if the cartridge is based on another
+    OPTIONAL {
+      ?item  wdt:P18     ?image  .   # grab image
+      ?other wdt:P18     ?image2 .   # grab image
+    }
+    OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+    BIND(str(COALESCE(?en,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+    OPTIONAL{?other rdfs:label ?oen . FILTER(LANG(?oen) = "en")}
+    BIND(str(COALESCE(?oen,strafter(str(?other),"http://www.wikidata.org/entity/"))) AS ?otherLabel)
+}
+ORDER BY ?item ?itemLabel ?image ?other ?otherLabel ?image2

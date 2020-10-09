@@ -1,0 +1,22 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Using formatter url to construct links in SPARQL
+# Get 10 paintings that have a link to RKDimages (P350)
+# Use the formatter URL (P1630) to construct the links to RKDimages
+#defaultView:ImageGrid
+SELECT ?item ?image ?rkdurl  WHERE {
+  wd:P350 wdt:P1630 ?formatterurl .
+  ?item wdt:P31 wd:Q3305213 .
+  ?item wdt:P18 ?image .
+  ?item wdt:P350 ?rkdid .
+  BIND((IRI(REPLACE(?rkdid, "^(.+)\\u0024", ?formatterurl))) AS ?rkdurl).
+  } 
+  ORDER BY ?item ?image ?rkdurl
+  LIMIT 10

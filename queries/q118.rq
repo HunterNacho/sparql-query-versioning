@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Cities connected to Paramaribo (Suriname) by main roads
+#added before 2016-10
+#defaultView:Map
+SELECT DISTINCT ?connection ?connectionLabel ?connectedWith ?connectedWithLabel ?coor
+WHERE
+{
+  VALUES ?city {wd:Q3001}
+  ?connection wdt:P2789+ ?city ;
+              wdt:P2789+ ?connectedWith .
+  ?connectedWith wdt:P625 ?coor .
+  OPTIONAL{?connection rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?connection),"http://www.wikidata.org/entity/"))) AS ?connectionLabel)
+  OPTIONAL{?connectedWith rdfs:label ?cen . FILTER(LANG(?cen) = "en")}
+	BIND(str(COALESCE(?cen,strafter(str(?connectedWith),"http://www.wikidata.org/entity/"))) AS ?connectedWithLabel)
+  }
+ORDER BY ?connection ?connectionLabel ?connectedWith ?connectedWithLabel ?coor

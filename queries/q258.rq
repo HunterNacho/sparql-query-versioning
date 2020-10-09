@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#People who lived in the same period as another person
+#added before 2016-10
+select ?person ?personLabel ?personDescription ?birth ?death
+WHERE
+{
+  ?person wdt:P31 wd:Q5.
+  ?person wdt:P569 ?birth .
+  ?person wdt:P570 ?death .
+  FILTER ( datatype(?birth) = xsd:dateTime && datatype(?death) = xsd:dateTime)
+  filter (?birth > "1452-04-15"^^xsd:dateTime && ?death < "1519-05-02"^^xsd:dateTime)
+  OPTIONAL{?person rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?person),"http://www.wikidata.org/entity/"))) AS ?personLabel)
+  OPTIONAL{?person schema:description ?den . FILTER(LANG(?den) = "en")}
+	BIND(str(COALESCE(?den,strafter(str(?person),"http://www.wikidata.org/entity/"))) AS ?personDescription)
+}
+ORDER BY ?person ?personLabel ?personDescription ?birth ?death

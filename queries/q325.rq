@@ -1,0 +1,24 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Women
+#Women mushers
+#added before 2016-10
+select distinct ?musher ?musherLabel
+where {
+  { ?musher wdt:P31 wd:Q5 .
+    ?musher wdt:P106 wd:Q500097 .
+    ?musher wdt:P21 wd:Q6581072}
+  OPTIONAL{?musher rdfs:label ?en . FILTER(LANG(?en) = "en")}
+        OPTIONAL{?musher rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?fr,?en,strafter(str(?musher),"http://www.wikidata.org/entity/"))) AS ?musherLabel)
+}
+ORDER BY ?musher ?musherLabel

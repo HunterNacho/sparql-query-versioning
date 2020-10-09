@@ -1,0 +1,24 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Film directors ranked by number of sitelinks multiplied by their number of films
+SELECT ?director ?director_label ?films ?sitelinks ((?films * ?sitelinks) as ?rank)
+WHERE {
+  {SELECT ?director (count(distinct ?film) as ?films) (count(distinct ?sitelink) as ?sitelinks)
+     WHERE { 
+       ?director wdt:P106 wd:Q2526255 .  				# has "film director" as occupation
+	   ?film wdt:P57 ?director . 	 					# get all films directed by the director
+       ?sitelink schema:about ?director .				# get all the sitelinks about the director
+       } GROUP BY ?director }
+   OPTIONAL{?director rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?director),"http://www.wikidata.org/entity/"))) AS ?director_label) 	
+} ORDER BY DESC(?rank) ?director ?director_label ?films ?sitelinks
+LIMIT 100

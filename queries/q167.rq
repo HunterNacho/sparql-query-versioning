@@ -1,0 +1,28 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Members of the French National Assembly born out of France
+#added before 2016-10
+SELECT DISTINCT ?item ?itemLabel ?placeLabel ?countryLabel
+WHERE
+{
+  ?item wdt:P39 wd:Q3044918 .
+  ?item wdt:P19 ?place .
+  ?place wdt:P17 ?country .
+  FILTER NOT EXISTS { ?place wdt:P17 wd:Q142 . }
+  OPTIONAL{?item rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?fr,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+  OPTIONAL{?place rdfs:label ?pfr . FILTER(LANG(?pfr) = "fr")}
+	BIND(str(COALESCE(?pfr,strafter(str(?place),"http://www.wikidata.org/entity/"))) AS ?placeLabel)
+  OPTIONAL{?country rdfs:label ?cfr . FILTER(LANG(?cfr) = "fr")}
+	BIND(str(COALESCE(?cfr,strafter(str(?country),"http://www.wikidata.org/entity/"))) AS ?countryLabel)
+}
+ORDER BY ?countryLabel ?itemLabel ?item ?placeLabel

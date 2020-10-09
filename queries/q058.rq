@@ -1,0 +1,23 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Distribution of names of human settlements ending in "-ow" or "-itz" in Germany
+#added before 2016-10
+ #defaultView:Map 
+SELECT ?item ?itemLabel ?coord
+WHERE
+{
+	?item wdt:P31/wdt:P279* wd:Q486972;
+    	      wdt:P17 wd:Q183;
+    	      rdfs:label ?itemLabel;
+    	      wdt:P625 ?coord.
+    	 FILTER (lang(?itemLabel) = "de") .
+    	 FILTER regex(?itemLabel, "(ow|itz)\\u0024").
+}
+ORDER BY ?item ?itemLabel ?coord

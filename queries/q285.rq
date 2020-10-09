@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Music
+#Timeline of albums by Manu Chao and Mano Negra
+#defaultView:Timeline
+SELECT ?album ?performerLabel ?albumLabel ?publication_date WHERE {
+  VALUES ?performer {
+      wd:Q936474
+      wd:Q207898
+    }
+   ?album wdt:P175 ?performer ;
+      wdt:P577 ?publication_date .
+   OPTIONAL{?album rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?album),"http://www.wikidata.org/entity/"))) AS ?albumLabel)
+   OPTIONAL{?performer rdfs:label ?pen . FILTER(LANG(?pen) = "en")}
+	BIND(str(COALESCE(?pen,strafter(str(?performer),"http://www.wikidata.org/entity/"))) AS ?performerLabel)
+}
+ORDER BY ?album ?performerLabel ?albumLabel ?publication_date

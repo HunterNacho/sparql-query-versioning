@@ -1,0 +1,21 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Person labels containing parentheses
+#added before 2016-10
+SELECT ?person ?label (LANG(?label) AS ?lang)
+WHERE
+{
+  ?person wdt:P31 wd:Q5;
+          rdfs:label ?label.
+  FILTER(LANG(?label) IN ("en", "es", "fr", "de")). # tweak to taste
+  FILTER(CONTAINS(?label, "(")).
+}
+ORDER BY ?person ?label ?lang
+LIMIT 10

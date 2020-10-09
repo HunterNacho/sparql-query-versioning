@@ -1,0 +1,23 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Disambiguation pages entities used as publishers
+SELECT ?publisher ?publisherLabel ?work WHERE {
+  # entities used as publisher
+  ?work wdt:P123 ?publisher .
+  # but that are actually a disambiguation page
+  ?publisher wdt:P31 wd:Q4167410 .
+  OPTIONAL{?publisher rdfs:label ?en . FILTER(LANG(?en) = "en")}
+        OPTIONAL{?publisher rdfs:label ?de . FILTER(LANG(?de) = "de")}
+        OPTIONAL{?publisher rdfs:label ?fr . FILTER(LANG(?fr) = "fr")}
+	BIND(str(COALESCE(?en,?fr,?de,strafter(str(?publisher),"http://www.wikidata.org/entity/"))) AS ?publisherLabel)
+}
+ORDER BY ?publisher ?publisherLabel ?work

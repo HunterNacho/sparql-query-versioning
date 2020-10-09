@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#List of countries in 1754
+#added before 2016-10
+SELECT ?h ?hLabel ?inception ?dissolved ?coor
+WHERE
+{
+	VALUES ?countryclass { wd:Q3024240 wd:Q6256 }
+  	?h wdt:P31 ?countryclass  .
+	?h wdt:P571 ?inception .
+	OPTIONAL { ?h wdt:P576 ?dissolved } .
+	FILTER (?inception < "1755-01-01T00:00:00Z"^^xsd:dateTime)
+	FILTER (?dissolved >= "1755-01-01T00:00:00Z"^^xsd:dateTime || !Bound(?dissolved) )
+	OPTIONAL{?h rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?h),"http://www.wikidata.org/entity/"))) AS ?hLabel)
+	OPTIONAL { ?h wdt:P625 ?coor } .
+}
+ORDER BY ?inception ?h ?hLabel ?dissolved ?coor

@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Paintings by Rembrandt in the Louvre or the Rijkmuseum
+#defaultView:ImageGrid
+SELECT DISTINCT ?item ?itemLabel ?itemDescription ?image ?collection WHERE {
+    ?item wdt:P31 wd:Q3305213 ; # Get items that are instances of painting
+          wdt:P170 wd:Q5598 ; # By creator Rembrandt
+          wdt:P195/wdt:P361* ?collection . # That are in some collection
+    # Only return results where 'collection' is either Rijkmuseum or Louvre
+    FILTER ( ?collection = wd:Q190804 || ?collection = wd:Q19675 )
+ 
+    OPTIONAL { ?item wdt:P18 ?image } # Optionally with an image
+    OPTIONAL{?item rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemLabel)
+	OPTIONAL{?item schema:description ?den . FILTER(LANG(?den) = "en")}
+	BIND(str(COALESCE(?den,strafter(str(?item),"http://www.wikidata.org/entity/"))) AS ?itemDescription)
+}
+ORDER BY ?item ?itemLabel ?itemDescription ?image ?collection

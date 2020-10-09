@@ -1,4 +1,4 @@
 *.rq
-queries/
+queries/*/
 test_output*
 *.class

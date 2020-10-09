@@ -1,0 +1,22 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Most common Zika author
+SELECT ?short_author ?short_authorLabel (count(?item) as ?count)
+WHERE
+{
+  { ?item wdt:P921 wd:Q202864 . } UNION { ?item wdt:P921 wd:Q8071861 . }
+  {?item wdt:P2093 ?short_author .} UNION {?item wdt:P50 ?short_author .}
+  OPTIONAL{?short_author rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?short_author),"http://www.wikidata.org/entity/"))) AS ?short_authorLabel)
+}
+GROUP BY ?short_author ?short_authorLabel
+ORDER BY DESC(?count) ?short_author ?short_authorLabel

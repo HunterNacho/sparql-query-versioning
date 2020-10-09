@@ -1,0 +1,27 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#American universities founded before the states they reside in were created
+SELECT ?uLabel ?founded ?stateLabel ?stateStart
+WHERE {
+	?u wdt:P31/wdt:P279* wd:Q3918 ;
+       wdt:P131+ ?state ;
+       wdt:P571 ?founded .
+	?state wdt:P31 wd:Q35657 ;
+           wdt:P571 ?stateStart .
+	FILTER (?founded < ?stateStart) .
+	OPTIONAL{?u rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?u),"http://www.wikidata.org/entity/"))) AS ?uLabel)
+	OPTIONAL{?state rdfs:label ?sen . FILTER(LANG(?sen) = "en")}
+	BIND(str(COALESCE(?sen,strafter(str(?state),"http://www.wikidata.org/entity/"))) AS ?stateLabel)
+}
+ORDER BY ?uLabel ?founded ?stateLabel ?stateStart
+LIMIT 10

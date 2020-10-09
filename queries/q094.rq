@@ -1,0 +1,25 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd: <http://www.bigdata.com/rdf#>
+#Fictional subjects of the Marvel Universe
+SELECT ?char ?charName (GROUP_CONCAT(DISTINCT ?typeLabel,", ") AS ?types) (GROUP_CONCAT(DISTINCT ?universeLabel,", ") AS ?universes)
+WHERE {
+	?char wdt:P1080 wd:Q931597;
+          wdt:P31 ?type ;
+          wdt:P1080 ?universe .
+OPTIONAL{?char rdfs:label ?en . FILTER(LANG(?en) = "en")}
+	BIND(str(COALESCE(?en,strafter(str(?char),"http://www.wikidata.org/entity/"))) AS ?charName)
+OPTIONAL{?type rdfs:label ?ten . FILTER(LANG(?ten) = "en")}
+	BIND(str(COALESCE(?ten,strafter(str(?type),"http://www.wikidata.org/entity/"))) AS ?typeLabel)
+OPTIONAL{?universe rdfs:label ?uen . FILTER(LANG(?uen) = "en")}
+	BIND(str(COALESCE(?uen,strafter(str(?universe),"http://www.wikidata.org/entity/"))) AS ?universeLabel)
+} GROUP BY ?char ?charName
+ORDER BY ?char ?charName ?types ?universes

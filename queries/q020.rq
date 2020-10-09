@@ -1,0 +1,21 @@
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdno: <http://www.wikidata.org/prop/novalue/>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+#Finding John and Sarah Connor
+#added before 2016-10
+SELECT ?p ?pl ?m ?ml 
+WHERE {
+  ?p wdt:P1080 wd:Q620588 . # from fictional universe: Terminator
+  ?p rdfs:label ?pl .
+  FILTER (lang(?pl) = "en")
+  ?p wdt:P25 ?m .  # ?m is mother of ?p
+  ?m rdfs:label ?ml .
+  FILTER (lang(?ml) = "en")
+}
+ORDER BY ?p ?pl ?m ?ml
