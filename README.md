@@ -445,7 +445,7 @@ WHERE
 
 
 ## Version Delta conversions
-## Independent Copies
+### Independent Copies
 
 ```
 SPARQL
